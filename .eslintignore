@@ -1,0 +1,8 @@
+jest.config.js
+**/build/*
+**/dist/*
+**/coverage/*
+**/.storybook/*
+**/node_modules/* 
+*.config.js
+*.config.ts
