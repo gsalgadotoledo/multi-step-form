@@ -5,14 +5,27 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const StyledButton = styled(MUIButton)<MUIButtonProps>(({ theme }) => ({
-  backgroundColor: theme.palette.secondary.main,
-  '&:hover': {
-    backgroundColor: theme.palette.secondary.dark,
-  },
-  ...theme.typography.button,
-  borderRadius: '8px',
-}));
+const StyledButton = styled(MUIButton)<MUIButtonProps>(
+  ({
+    theme: {
+      palette: { secondary, primary },
+    },
+    color = 'primary',
+  }) => ({
+    backgroundColor: color === 'primary' ? primary.main : secondary.main,
+    '&:hover': {
+      backgroundColor: color === 'primary' ? primary.light : secondary.light,
+    },
+    fontFamily: ['Ubuntu', '-apple-system', 'Arial'].join(','),
+    fontSize: '16px',
+    fontWeight: 400,
+    lineHeight: '18px',
+    letterSpacing: '0px',
+    color: '#ffffff',
+    textTransform: 'none',
+    borderRadius: '8px',
+  })
+);
 
 export const Button = (props: MUIButtonProps) => {
   return <StyledButton sx={{ px: 3, py: 2 }} {...props} />;

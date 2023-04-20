@@ -20,4 +20,11 @@ describe('Button component', () => {
     userEvent.click(screen.getByRole('button'));
     expect(onClick).toHaveBeenCalled();
   });
+
+  it('should render the button component with secondary color', () => {
+    render(<Button color="secondary">Click me</Button>);
+    expect(screen.getByRole('button')).toHaveStyle({
+      backgroundColor: 'rgb(72, 62, 255);',
+    });
+  });
 });
