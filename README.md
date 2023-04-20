@@ -16,31 +16,32 @@
 
 This project is built with React and TypeScript, using Vite for a fast and modern development experience.
 
-![Vite React TypeScript](./screenshots/vite-react-typescript.png)
 
 ### 2. Jest + React Testing Library
 
 Jest and React Testing Library are used for unit testing to ensure that each component works as expected.
 
-![Jest React Testing Library](./screenshots/jest-react-testing-library.png)
 
 ### 3. ESLint + Prettier
 
 ESLint and Prettier are used to enforce code quality and consistency throughout the project.
 
-![ESLint Prettier](./screenshots/eslint-prettier.png)
 
 ### 4. Cypress
 
 Cypress is included for end-to-end testing, ensuring that the application works as expected from the user's perspective.
 
-![Cypress](./screenshots/cypress.png)
 
 ### 5. Storybook
 
 Storybook is used to develop and document components in an isolated environment, making it easy to visualize and test each component's functionality.
 
-![Storybook](./screenshots/storybook.png)
+### 5. Huksy
+
+Before each commit intent a hook that runs the linters and tests will be called
+
+![Kapture 2023-04-20 at 18 36 35](https://user-images.githubusercontent.com/1288502/233508854-dd456699-4fd3-46c6-af8a-887cb57e8db8.gif)
+
 
 ## 🚀 Getting Started
 
@@ -118,6 +119,3 @@ Follow these steps to set up the project on your local machine:
 
    This command will automatically fix any code formatting issues found in your project files.
 
-## 📄 License
-
-This project is licensed under the [MIT License](./LICENSE).
