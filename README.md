@@ -1,8 +1,8 @@
 # 👋 Awesome Multi Step Form
 
-📝 This project implements a set of useful tools to build a high-quality and ready-for-production frontend project that showcases a multi-step form. The form allows users to fill in and submit information in an intuitive and user-friendly way, adapting to different device sizes.
+This project implements a set of useful tools to build a high-quality and ready-for-production frontend project that showcases a multi-step form. The form allows users to fill in and submit information in an intuitive and user-friendly way, adapting to different device sizes.
 
-## 🌟 Features
+## Features
 
 - 🌐 Built with React on TypeScript using Vite
 - 🧪 Jest + React Testing Library for unit tests
@@ -10,9 +10,9 @@
 - 🌲 Cypress for end-to-end testing
 - 📚 Storybook for component documentation and development
 
-## 🛠️ Important Tools
+## Important Tools
 
-### 1. ✨ React + TypeScript + Vite
+### 1. React + TypeScript + Vite
 
 This project is built with React and TypeScript, using Vite for a fast and modern development experience.
 
@@ -40,7 +40,9 @@ Storybook is used to develop and document components in an isolated environment,
 
 Before each commit intent a hook that runs the linters and tests will be called
 
+
 ![Kapture 2023-04-20 at 18 36 35](https://user-images.githubusercontent.com/1288502/233508854-dd456699-4fd3-46c6-af8a-887cb57e8db8.gif)
+
 
 
 ## 🚀 Getting Started
@@ -50,13 +52,13 @@ Follow these steps to set up the project on your local machine:
 1. **Clone the repository**
 
    ```
-   git clone https://github.com/your-username/awesome-multi-step-form.git
+   git clone https://github.com/gsalgadotoledo/multi-step-form.git
    ```
 
 2. **Navigate to the project directory**
 
    ```
-   cd awesome-multi-step-form
+   cd multi-step-form
    ```
 
 3. **Install dependencies**
@@ -71,7 +73,7 @@ Follow these steps to set up the project on your local machine:
    npm run dev
    ```
 
-5. **Open your browser**
+6. **Open your browser**
 
    Navigate to `http://localhost:5173/` to see the project in action.
 
@@ -91,7 +93,6 @@ Follow these steps to set up the project on your local machine:
 
    This will open the Cypress Test Runner, where you can select and run the test suites.
 
-   ![Cypress Test Runner](./screenshots/cypress-test-runner.png)
 
 3. **Run Storybook**
 
@@ -101,7 +102,7 @@ Follow these steps to set up the project on your local machine:
 
    This will start the Storybook server at `http://localhost:6006`. You can view and interact with the components in isolation.
 
-   ![Storybook Interface](./screenshots/storybook-interface.png)
+
 
 4. **Run ESLint**
 
