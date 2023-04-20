@@ -14,11 +14,21 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Large: Story = {
+export const Primary: Story = {
   render: (args) => (
     <ThemeProvider theme={theme}>
-      <Button {...args} size="large">
+      <Button {...args} color="primary">
         Next Step
+      </Button>
+    </ThemeProvider>
+  ),
+};
+
+export const Secondary: Story = {
+  render: (args) => (
+    <ThemeProvider theme={theme}>
+      <Button {...args} color="secondary">
+        Submit
       </Button>
     </ThemeProvider>
   ),
