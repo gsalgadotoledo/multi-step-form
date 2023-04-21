@@ -90,7 +90,10 @@ const theme = createTheme({
     success: {
       light: '#ABBCFF', // Light blue
       main: '#BEE2FD', // Sky blue
-      dark: '#000000', // Grey text
+      dark: '#EFF5FF', // BG Blue
+    },
+    background: {
+      default: '#EFF5FF',
     },
   },
 });

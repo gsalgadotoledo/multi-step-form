@@ -5,7 +5,7 @@ import theme from '../../theme';
 
 import { StepsList } from './StepsList';
 const meta = {
-  title: 'Organism/StepsList',
+  title: 'Molecules/StepsList',
   component: StepsList,
   tags: ['autodocs'],
 } satisfies Meta<typeof StepsList>;
