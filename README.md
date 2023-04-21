@@ -32,7 +32,10 @@ Cypress is included for end-to-end testing, ensuring that the application works 
 
 Storybook is used to develop and document components in an isolated environment, making it easy to visualize and test each component's functionality.
 
-### 5. Huksy
+![Kapture 2023-04-21 at 08 57 02](https://user-images.githubusercontent.com/1288502/233655332-0534fdaf-55e0-4966-8acf-d3a6e49a0200.gif)
+
+
+### 6. Huksy
 
 Before each commit intent a hook that runs the linters and tests will be called
 
