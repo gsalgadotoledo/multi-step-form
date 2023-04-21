@@ -30,7 +30,7 @@ export const WithError: Story = {
   args: {
     label: 'Phone',
     placeholder: 'e.g. +1 234 567 890',
-    error: 'This field is required',
+    errorMessage: 'This field is required',
   },
   render: (args) => (
     <ThemeProvider theme={theme}>

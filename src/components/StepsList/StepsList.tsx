@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Grid } from '@mui/material';
 import StepsListItem from './StepsListItem';
 import stepBg from '../../assets/step-bg.svg';
+import { useFormContext } from '../../contexts/FormContext';
 
 const StyledGrid = styled(Grid)(({ theme: { palette } }) => ({
   backgroundColor: palette.secondary.main,
@@ -19,7 +20,6 @@ const steps = [
     step: 1,
     title: 'STEP 1',
     subtitle: 'YOUR INFO',
-    active: true,
   },
   {
     step: 2,
@@ -39,6 +39,8 @@ const steps = [
 ];
 
 export const StepsList = () => {
+  const { formState } = useFormContext();
+
   return (
     <StyledGrid
       container
@@ -49,13 +51,13 @@ export const StepsList = () => {
         flexDirection: 'column',
       }}
     >
-      {steps.map(({ title, subtitle, step, active }) => (
+      {steps.map(({ title, subtitle, step }, index) => (
         <StepsListItem
           key={step}
           title={title}
           subtitle={subtitle}
           step={step}
-          activeItem={active}
+          activeItem={formState.currentStep === index}
         />
       ))}
     </StyledGrid>

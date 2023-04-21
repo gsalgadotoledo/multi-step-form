@@ -1,10 +1,10 @@
 import React from 'react';
-import { Hello } from './components/Hello';
+import { MainLayout } from './components/MainLayout/MainLayout';
 
 const App = () => {
   return (
     <div className="App">
-      <Hello />
+      <MainLayout />
     </div>
   );
 };
