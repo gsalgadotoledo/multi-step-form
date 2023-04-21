@@ -1,6 +1,8 @@
-# 👋 Awesome Multi Step Form
+# Awesome Multi Step Form
 
-This project implements a set of useful tools to build a high-quality and ready-for-production frontend project that showcases a multi-step form. The form allows users to fill in and submit information in an intuitive and user-friendly way, adapting to different device sizes.
+👋 This project implements a set of useful tools to build a high-quality and ready-for-production frontend project that showcases a multi-step form. The form allows users to fill in and submit information in an intuitive and user-friendly way, adapting to different device sizes.
+
+![Kapture 2023-04-21 at 17 38 47](https://user-images.githubusercontent.com/1288502/233745741-e61b4cfe-e1d8-4029-8c3c-a61adde1faf1.gif)
 
 ## Features
 
