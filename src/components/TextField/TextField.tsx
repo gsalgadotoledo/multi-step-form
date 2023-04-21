@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import {
   Box,
   OutlinedInput as MUIOutlineInput,
+  OutlinedInputProps,
   SxProps,
   Theme,
   Typography,
@@ -31,43 +32,53 @@ const errorLabelStyles: SxProps<Theme> = [
   }),
 ];
 
-export interface TextFieldProps {
+export interface TextFieldProps extends OutlinedInputProps {
   label?: string;
   value?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
-  error?: string;
+  errorMessage?: string;
 }
 
-export const TextField = ({
-  label,
-  placeholder,
-  value,
-  onChange,
-  error,
-}: TextFieldProps) => {
-  return (
-    <Box sx={{ marginBottom: '20px' }}>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Typography sx={{ mb: 1 }} variant="h6" component="label">
-          {label}
-        </Typography>
-        {error && (
-          <Typography sx={errorLabelStyles} variant="h6" component="span">
-            {error}
+export const TextField = forwardRef(
+  (
+    {
+      label,
+      placeholder,
+      value,
+      onChange,
+      errorMessage,
+      ...rest
+    }: TextFieldProps,
+    ref
+  ) => {
+    return (
+      <Box sx={{ marginBottom: '20px' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Typography sx={{ mb: 1 }} variant="h6" component="label">
+            {label}
           </Typography>
-        )}
+          {errorMessage && (
+            <Typography sx={errorLabelStyles} variant="h6" component="span">
+              {errorMessage}
+            </Typography>
+          )}
+        </Box>
+        <MUIOutlineInput
+          ref={ref}
+          value={value}
+          onChange={onChange}
+          sx={inputStyles(errorMessage)}
+          placeholder={placeholder}
+          inputProps={{ sx: inputPropsStyles }}
+          fullWidth
+          {...rest}
+        />
       </Box>
-      <MUIOutlineInput
-        value={value}
-        onChange={onChange}
-        sx={inputStyles(error)}
-        placeholder={placeholder}
-        inputProps={{ sx: inputPropsStyles }}
-        fullWidth
-      />
-    </Box>
-  );
-};
+    );
+  }
+);
+
+TextField.displayName = 'TextField';
 
 export default TextField;

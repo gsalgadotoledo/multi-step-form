@@ -13,8 +13,11 @@ export const StyledRoundBox = styled(Box)<StyledRoundBoxProps>(
     state = false,
   }) => ({
     borderRadius: '50%',
-    background: state ? success.main : 'transparent',
-    border: `1px solid ${state ? success.main : primary.contrastText}`,
+    content: `"${state}"`,
+    background: state === 'true' ? success.main : 'transparent',
+    border: `1px solid ${
+      state === 'true' ? success.main : primary.contrastText
+    }`,
     width: '33px',
     height: '33px',
     display: 'flex',
@@ -34,7 +37,7 @@ export const StyledNumber = styled(Typography)<StyledNumberProps>(
     },
     state = false,
   }) => ({
-    color: state ? primary.main : primary.contrastText,
+    color: state === 'true' ? primary.main : primary.contrastText,
     fontFamily: typography.fontFamily,
     fontStyle: 'normal',
     fontWeight: 700,

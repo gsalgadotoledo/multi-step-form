@@ -10,7 +10,7 @@ describe('TextField', () => {
     placeholder: 'Test placeholder',
     value: 'Test value',
     onChange: onChangeMock,
-    error: 'Test error',
+    errorMessage: 'Test error',
   };
 
   beforeEach(() => {
@@ -33,7 +33,7 @@ describe('TextField', () => {
     });
 
     it('should render error', () => {
-      expect(screen.getByText(props.error!)).toBeInTheDocument();
+      expect(screen.getByText(props.errorMessage!)).toBeInTheDocument();
     });
   });
 
