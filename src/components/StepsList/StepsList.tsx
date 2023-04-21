@@ -43,7 +43,8 @@ export const StepsList = () => {
     <StyledGrid
       container
       sx={{
-        p: 3,
+        px: 3,
+        paddingTop: '28px',
         flexWrap: 'nowrap',
         flexDirection: 'column',
       }}
