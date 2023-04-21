@@ -6,6 +6,7 @@ module.exports = {
   ],
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.svg$': '<rootDir>/__mocks__/svgrMock.js',
   },
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy',

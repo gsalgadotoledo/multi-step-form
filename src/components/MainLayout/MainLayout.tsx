@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Button as MUIButton, Container, Typography } from '@mui/material';
+import { Box, Button as MUIButton, Container } from '@mui/material';
 import { Button } from '../Button/Button';
+import { TextField } from '../TextField/TextField';
 import ContentBox from '../ContentBox/ContentBox';
 import StepsList from '../StepsList/StepsList';
 import Header from '../Header/Header';
@@ -38,7 +39,11 @@ export const MainLayout = () => {
           />
           <Box sx={boxStyles}>
             <Box sx={{ ...boxStyles, pt: 4 }}>
-              <Typography variant="body1">Content Here</Typography>
+              <TextField
+                label="Phone"
+                error="This field is required"
+                placeholder="e.g. +1 234 567 890"
+              />
             </Box>
           </Box>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>

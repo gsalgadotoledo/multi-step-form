@@ -4,5 +4,6 @@ jest.config.js
 **/coverage/*
 **/.storybook/*
 **/node_modules/* 
+**/__mocks__/*
 *.config.js
 *.config.ts

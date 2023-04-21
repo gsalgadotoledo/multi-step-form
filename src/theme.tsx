@@ -92,6 +92,11 @@ const theme = createTheme({
       main: '#BEE2FD', // Sky blue
       dark: '#EFF5FF', // BG Blue
     },
+    error: {
+      light: '#EE374A', // Red
+      main: '#EE374A', // Red
+      dark: '#EE374A', // Red
+    },
     background: {
       default: '#EFF5FF',
     },
