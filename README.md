@@ -16,21 +16,17 @@ This project implements a set of useful tools to build a high-quality and ready-
 
 This project is built with React and TypeScript, using Vite for a fast and modern development experience.
 
-
 ### 2. Jest + React Testing Library
 
 Jest and React Testing Library are used for unit testing to ensure that each component works as expected.
-
 
 ### 3. ESLint + Prettier
 
 ESLint and Prettier are used to enforce code quality and consistency throughout the project.
 
-
 ### 4. Cypress
 
 Cypress is included for end-to-end testing, ensuring that the application works as expected from the user's perspective.
-
 
 ### 5. Storybook
 
@@ -40,10 +36,7 @@ Storybook is used to develop and document components in an isolated environment,
 
 Before each commit intent a hook that runs the linters and tests will be called
 
-
 ![Kapture 2023-04-20 at 18 36 35](https://user-images.githubusercontent.com/1288502/233508854-dd456699-4fd3-46c6-af8a-887cb57e8db8.gif)
-
-
 
 ## 🚀 Getting Started
 
@@ -73,7 +66,7 @@ Follow these steps to set up the project on your local machine:
    npm run dev
    ```
 
-6. **Open your browser**
+5. **Open your browser**
 
    Navigate to `http://localhost:5173/` to see the project in action.
 
@@ -93,7 +86,6 @@ Follow these steps to set up the project on your local machine:
 
    This will open the Cypress Test Runner, where you can select and run the test suites.
 
-
 3. **Run Storybook**
 
    ```
@@ -101,8 +93,6 @@ Follow these steps to set up the project on your local machine:
    ```
 
    This will start the Storybook server at `http://localhost:6006`. You can view and interact with the components in isolation.
-
-
 
 4. **Run ESLint**
 
@@ -119,4 +109,3 @@ Follow these steps to set up the project on your local machine:
    ```
 
    This command will automatically fix any code formatting issues found in your project files.
-

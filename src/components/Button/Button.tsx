@@ -9,6 +9,7 @@ const StyledButton = styled(MUIButton)<MUIButtonProps>(
   ({
     theme: {
       palette: { secondary, primary },
+      typography: { fontFamily },
     },
     color = 'primary',
   }) => ({
@@ -16,12 +17,12 @@ const StyledButton = styled(MUIButton)<MUIButtonProps>(
     '&:hover': {
       backgroundColor: color === 'primary' ? primary.light : secondary.light,
     },
-    fontFamily: ['Ubuntu', '-apple-system', 'Arial'].join(','),
+    fontFamily,
     fontSize: '16px',
     fontWeight: 400,
     lineHeight: '18px',
     letterSpacing: '0px',
-    color: '#ffffff',
+    color: primary.contrastText,
     textTransform: 'none',
     borderRadius: '8px',
   })
