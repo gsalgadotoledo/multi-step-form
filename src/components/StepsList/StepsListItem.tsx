@@ -22,7 +22,7 @@ export const StepsListItem = ({
 }: StepsListItemProps) => {
   return (
     <Grid item xs={12}>
-      <Grid container wrap="nowrap" sx={{ mx: 'auto', p: 2 }}>
+      <Grid container wrap="nowrap" sx={{ mx: 'auto', padding: '13px' }}>
         <Grid item>
           <StyledRoundBox state={activeItem?.toString()}>
             <StyledNumber state={activeItem?.toString()}>{step}</StyledNumber>

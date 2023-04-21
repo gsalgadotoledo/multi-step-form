@@ -11,10 +11,13 @@ export const ContentBox = ({ children, ...rest }: ContentBoxProps) => {
       sx={{
         backgroundColor: 'primary.contrastText',
         borderRadius: '15px',
-        boxShadow: '0px 15px 40px rgba(0, 0, 0, 0.10)',
+        boxShadow: '0px 25px 40px -20px rgba(0, 0, 0, 0.0951141)',
         margin: '0 auto',
         maxWidth: '940px',
+        boxSizing: 'border-box',
         padding: '16px',
+        display: 'flex',
+        flexDirection: 'row',
       }}
       {...rest}
     >
