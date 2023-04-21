@@ -2,9 +2,15 @@ import React from 'react';
 import { styled } from '@mui/material/styles';
 import { Grid } from '@mui/material';
 import StepsListItem from './StepsListItem';
+import stepBg from '../../assets/step-bg.svg';
 
 const StyledGrid = styled(Grid)(({ theme: { palette } }) => ({
   backgroundColor: palette.secondary.main,
+  backgroundImage: `url(${stepBg})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  maxWidth: '274px',
+  minHeight: '568px',
   borderRadius: '10px',
 }));
 
@@ -34,7 +40,14 @@ const steps = [
 
 export const StepsList = () => {
   return (
-    <StyledGrid container sx={{ p: 3 }}>
+    <StyledGrid
+      container
+      sx={{
+        p: 3,
+        flexWrap: 'nowrap',
+        flexDirection: 'column',
+      }}
+    >
       {steps.map(({ title, subtitle, step, active }) => (
         <StepsListItem
           key={step}
