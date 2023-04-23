@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import { Grid, SxProps, Theme } from '@mui/material';
 import {
   StyledRoundBox,
   StyledNumber,
@@ -22,13 +22,13 @@ export const StepsListItem = ({
 }: StepsListItemProps) => {
   return (
     <Grid item xs={12}>
-      <Grid container wrap="nowrap" sx={{ mx: 'auto', padding: '13px' }}>
+      <Grid container wrap="nowrap" sx={contentListStyles}>
         <Grid item>
           <StyledRoundBox state={activeItem?.toString()}>
             <StyledNumber state={activeItem?.toString()}>{step}</StyledNumber>
           </StyledRoundBox>
         </Grid>
-        <Grid item sx={{ pl: 2 }}>
+        <Grid item sx={contentItemStyles}>
           <StyledTitle sx={{ pb: 1 }}>{title}</StyledTitle>
           <StyledSubTitle>{subtitle}</StyledSubTitle>
         </Grid>
@@ -38,3 +38,23 @@ export const StepsListItem = ({
 };
 
 export default StepsListItem;
+
+const contentListStyles: SxProps<Theme> = [
+  {
+    mx: 'auto',
+    padding: '13px',
+  },
+  ({ breakpoints: { down } }) => ({
+    [down('sm')]: {
+      justifyContent: 'center',
+    },
+  }),
+];
+const contentItemStyles: SxProps<Theme> = [
+  ({ breakpoints: { down } }) => ({
+    pl: 2,
+    [down('sm')]: {
+      display: 'none',
+    },
+  }),
+];
