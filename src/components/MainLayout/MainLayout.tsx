@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container } from '@mui/material';
+import { Box, Container, SxProps, Theme } from '@mui/material';
 import ContentBox from '../ContentBox/ContentBox';
 import StepsList from '../StepsList/StepsList';
 import { useFormContext } from '../../contexts/FormContext';
@@ -17,31 +17,13 @@ const steps = [
   <Steps5 key="5" />,
 ];
 
-const contentBoxStyles = {
-  display: 'flex',
-  flexDirection: 'column',
-  flex: 1,
-  paddingLeft: '98px',
-  paddingRight: `${98 - 16}px`,
-  paddingTop: '44px',
-  pb: 2,
-  justifyContent: 'space-between',
-  '& > form': {
-    display: 'flex',
-    flexDirection: 'column',
-    flex: 1,
-  },
-};
-
-const leftBoxStyles = { width: '274px' };
-
 export const MainLayout = () => {
   const {
     formState: { currentStep },
   } = useFormContext();
 
   return (
-    <Container>
+    <Container sx={{ mt: 8 }}>
       <ContentBox>
         <Box sx={leftBoxStyles}>
           <StepsList />
@@ -51,3 +33,28 @@ export const MainLayout = () => {
     </Container>
   );
 };
+
+const contentBoxStyles: SxProps<Theme> = [
+  {
+    display: 'flex',
+    flexDirection: 'column',
+    flex: 1,
+    paddingLeft: '98px',
+    paddingRight: `${98 - 16}px`,
+    paddingTop: '44px',
+    pb: 2,
+    justifyContent: 'space-between',
+    '& > form': {
+      display: 'flex',
+      flexDirection: 'column',
+      flex: 1,
+    },
+  },
+  ({ breakpoints: { down } }) => ({
+    [down('sm')]: {
+      padding: '32px 16px',
+    },
+  }),
+];
+
+const leftBoxStyles = { width: '274px' };

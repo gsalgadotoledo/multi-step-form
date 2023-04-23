@@ -1,19 +1,10 @@
 import React from 'react';
-import { styled } from '@mui/material/styles';
+import { SxProps, Theme } from '@mui/material/styles';
 import { Grid } from '@mui/material';
 import StepsListItem from './StepsListItem';
 import stepBg from '../../assets/step-bg.svg';
+import stepBgMobile from '../../assets/step-bg-mobile.svg';
 import { useFormContext } from '../../contexts/FormContext';
-
-const StyledGrid = styled(Grid)(({ theme: { palette } }) => ({
-  backgroundColor: palette.secondary.main,
-  backgroundImage: `url(${stepBg})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
-  maxWidth: '274px',
-  minHeight: '568px',
-  borderRadius: '10px',
-}));
 
 const steps = [
   {
@@ -42,15 +33,7 @@ export const StepsList = () => {
   const { formState } = useFormContext();
 
   return (
-    <StyledGrid
-      container
-      sx={{
-        px: 3,
-        paddingTop: '28px',
-        flexWrap: 'nowrap',
-        flexDirection: 'column',
-      }}
-    >
+    <Grid container sx={contentStyles}>
       {steps.map(({ title, subtitle, step }, index) => (
         <StepsListItem
           key={step}
@@ -60,8 +43,43 @@ export const StepsList = () => {
           activeItem={formState.currentStep === index}
         />
       ))}
-    </StyledGrid>
+    </Grid>
   );
 };
 
 export default StepsList;
+
+const contentStyles: SxProps<Theme> = [
+  ({
+    palette: {
+      secondary: { main: backgroundColor },
+    },
+    breakpoints: { down },
+  }) => ({
+    px: 3,
+    paddingTop: '28px',
+    flexWrap: 'nowrap',
+    flexDirection: 'column',
+    backgroundColor,
+    backgroundImage: `url(${stepBg})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    maxWidth: '274px',
+    minHeight: '568px',
+    borderRadius: '10px',
+    [down('sm')]: {
+      position: 'absolute',
+      zIndex: -10,
+      top: 0,
+      maxWidth: '100%',
+      left: 0,
+      borderRadius: '0px',
+      flexDirection: 'row',
+      minHeight: '172px',
+      padding: '18px 15%',
+      backgroundImage: `url(${stepBgMobile})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+    },
+  }),
+];

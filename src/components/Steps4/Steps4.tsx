@@ -4,6 +4,7 @@ import { Button as MUIButton, Box } from '@mui/material';
 import { Button } from '../Button/Button';
 import Header from '../Header/Header';
 import { useFormContext } from '../../contexts/FormContext';
+import { footerStyles } from '../../styles/footer';
 
 const boxStyles = {
   display: 'flex',
@@ -42,7 +43,7 @@ export const Steps4 = () => {
       <Box sx={boxStyles}>
         <Box sx={{ ...boxStyles, pt: 4 }}>Step 4</Box>
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+      <Box sx={footerStyles}>
         <MUIButton
           onClick={handlePrevStep}
           sx={{
