@@ -2,7 +2,10 @@
 
 👋 This project implements a set of useful tools to build a high-quality and ready-for-production frontend project that showcases a multi-step form. The form allows users to fill in and submit information in an intuitive and user-friendly way, adapting to different device sizes.
 
-![Kapture 2023-04-23 at 22 23 16](https://user-images.githubusercontent.com/1288502/233897677-c45d22d7-1391-4e0a-af9e-b6824b95be46.gif)
+![Kapture 2023-04-24 at 00 40 58](https://user-images.githubusercontent.com/1288502/233909568-455063c7-dbc5-4e32-a7d8-2422035c43fb.gif)
+
+![Kapture 2023-04-24 at 00 46 09](https://user-images.githubusercontent.com/1288502/233909804-1ee59c21-f06d-4b31-9df5-15cbe682de4c.gif)
+
 
 ## Features
 
