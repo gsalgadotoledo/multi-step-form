@@ -8,6 +8,7 @@ import Header from '../Header/Header';
 import { TextField } from '../TextField/TextField';
 import { useFormContext } from '../../contexts/FormContext';
 import { footerStyles } from '../../styles/footer';
+import { FormState } from '../../contexts/FormContext';
 
 const boxStyles = {
   display: 'flex',
@@ -18,11 +19,11 @@ const boxStyles = {
 // Validation schema using Yup
 const step1Schema = yup.object().shape({
   name: yup.string().required('Name is required'),
-  email: yup
+  emailAddress: yup
     .string()
     .email('Invalid email address')
     .required('Email is required'),
-  phone: yup.string().required('Phone number is required'),
+  phoneNumber: yup.string().required('Phone number is required'),
 });
 
 export const Steps1 = () => {
@@ -31,11 +32,14 @@ export const Steps1 = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(step1Schema) });
+  } = useForm({
+    resolver: yupResolver(step1Schema),
+    defaultValues: formState.step1,
+  });
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: FormState['step1']) => {
     // Handle submit
-    setFormState((prevState: any) => ({
+    setFormState((prevState) => ({
       ...prevState,
       step1: data,
       currentStep: prevState.currentStep + 1,
@@ -63,14 +67,14 @@ export const Steps1 = () => {
             errorMessage={errors.name?.message as string}
           />
           <TextField
-            {...register('email')}
+            {...register('emailAddress')}
             label="Email"
-            errorMessage={errors.email?.message as string}
+            errorMessage={errors.emailAddress?.message as string}
           />
           <TextField
-            {...register('phone')}
+            {...register('phoneNumber')}
             label="Phone Number"
-            errorMessage={errors.phone?.message as string}
+            errorMessage={errors.phoneNumber?.message as string}
           />
         </Box>
       </Box>
@@ -80,6 +84,7 @@ export const Steps1 = () => {
           sx={{
             textTransform: 'none',
             opacity: formState.currentStep > 0 ? 1 : 0,
+            color: 'info.main',
           }}
           variant="text"
         >

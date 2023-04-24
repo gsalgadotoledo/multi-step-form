@@ -1,12 +1,19 @@
 import React, { createContext, useState, useContext } from 'react';
 
-interface FormState {
+export interface FormState {
   currentStep: number;
-  step1: any;
-  step2: any;
-  step3: any;
-  step4: any;
-  step5: any;
+  step1: {
+    name: string | null;
+    emailAddress: string | null;
+    phoneNumber: string | null;
+  };
+  step2: {
+    plan: number | null; // 0, 1, 2
+    billing: boolean; // false, true, Monthly and Yearly
+  };
+  step3: {
+    addOns: number[]; // 0, 1, 2
+  };
 }
 
 interface FormProviderProps {
@@ -15,11 +22,18 @@ interface FormProviderProps {
 
 const initialState: FormState = {
   currentStep: 0,
-  step1: {},
-  step2: {},
-  step3: {},
-  step4: {},
-  step5: {},
+  step1: {
+    name: null,
+    emailAddress: null,
+    phoneNumber: null,
+  },
+  step2: {
+    plan: null, // 0, 1, 2
+    billing: false, // false, true, Monthly and Yearly
+  },
+  step3: {
+    addOns: [], // 0, 1, 2
+  },
 };
 
 const FormContext = createContext<{
