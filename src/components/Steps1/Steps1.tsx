@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Button as MUIButton, Box } from '@mui/material';
+import { Button as MUIButton, Box, SxProps, Theme } from '@mui/material';
 import * as yup from 'yup';
 import { Button } from '../Button/Button';
 import Header from '../Header/Header';
@@ -60,21 +60,24 @@ export const Steps1 = () => {
         subtitle="Please provide your name, email address, and phone number."
       />
       <Box sx={boxStyles}>
-        <Box sx={{ ...boxStyles, pt: 4 }}>
+        <Box sx={containerBoxStyles}>
           <TextField
             {...register('name')}
             label="Name"
             errorMessage={errors.name?.message as string}
+            placeholder="e.g. Stephen King"
           />
           <TextField
             {...register('emailAddress')}
-            label="Email"
+            label="Email Address"
             errorMessage={errors.emailAddress?.message as string}
+            placeholder="e.g. stephenking@lorem.com"
           />
           <TextField
             {...register('phoneNumber')}
             label="Phone Number"
             errorMessage={errors.phoneNumber?.message as string}
+            placeholder="e.g. +1 234 567 890"
           />
         </Box>
       </Box>
@@ -97,3 +100,13 @@ export const Steps1 = () => {
 };
 
 export default Steps1;
+
+const containerBoxStyles: SxProps<Theme> = [
+  ({ breakpoints: { down } }) => ({
+    ...boxStyles,
+    pt: 4,
+    [down('sm')]: {
+      pt: 3,
+    },
+  }),
+];

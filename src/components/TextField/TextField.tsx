@@ -30,9 +30,29 @@ export const TextField = forwardRef(
     ref
   ) => {
     return (
-      <Box sx={{ marginBottom: '20px' }}>
+      <Box
+        sx={[
+          ({ breakpoints: { down } }) => ({
+            marginBottom: '18px',
+            [down('sm')]: {
+              marginBottom: '14px',
+            },
+          }),
+        ]}
+      >
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Typography sx={{ mb: 1 }} variant="h6" component="label">
+          <Typography
+            sx={[
+              ({ breakpoints: { down } }) => ({
+                marginBottom: '6px',
+                [down('sm')]: {
+                  fontSize: '12px',
+                },
+              }),
+            ]}
+            variant="h6"
+            component="label"
+          >
             {label}
           </Typography>
           {errorMessage && <ErrorTypography>{errorMessage}</ErrorTypography>}
@@ -56,11 +76,16 @@ TextField.displayName = 'TextField';
 
 export default TextField;
 
-const inputPropsStyles = {
-  padding: '13px 14px',
-  fontSize: '16px',
-  lineHeight: '18px',
-};
+const inputPropsStyles: SxProps<Theme> = [
+  ({ breakpoints: { down } }) => ({
+    padding: '10px 14px',
+    fontSize: '16px',
+    lineHeight: '18px',
+    [down('sm')]: {
+      fontSize: '15px',
+    },
+  }),
+];
 
 const inputStyles = (error?: string): SxProps<Theme> => [
   { '& .MuiOutlinedInput-notchedOutline': { opacity: 0 }, borderRadius: '8px' },
