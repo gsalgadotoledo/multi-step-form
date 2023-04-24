@@ -105,7 +105,7 @@ export const Steps2 = () => {
               labelTrue="Yearly"
             />
           </Box>
-          <Box sx={{ mt: 2 }}>
+          <Box sx={{ mt: 2, justifyContent: 'flex-end', display: 'flex' }}>
             {formState.step2.plan === null && (
               <ErrorTypography>Please select at least one plan</ErrorTypography>
             )}

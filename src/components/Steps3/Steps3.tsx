@@ -5,12 +5,29 @@ import { Button } from '../Button/Button';
 import Header from '../Header/Header';
 import { useFormContext } from '../../contexts/FormContext';
 import { footerStyles } from '../../styles/footer';
+import AddOnSelector from '../AddOnSelector/AddOnSelector';
+import { ErrorTypography } from '../ErrorTypography/ErrorTypography';
 
-const boxStyles = {
-  display: 'flex',
-  flexGrow: 1,
-  flexDirection: 'column',
-};
+const addOnsList = [
+  {
+    title: 'Online service',
+    subtitle: 'Access to multiplayer games',
+    price: '+$1/mo',
+    id: 1,
+  },
+  {
+    title: 'Larger storage',
+    subtitle: 'Extra 1TB of cloud save',
+    price: '+$2/mo',
+    id: 2,
+  },
+  {
+    title: 'Customizable Profile',
+    subtitle: 'Custom theme on your profile',
+    price: '+$2/mo',
+    id: 3,
+  },
+];
 
 export const Steps3 = () => {
   const { formState, setFormState } = useFormContext();
@@ -20,17 +37,27 @@ export const Steps3 = () => {
     // Handle submit
   };
 
-  function handlePrevStep() {
+  function handlePrevStep(): void {
     setFormState((prevState) => ({
       ...prevState,
       currentStep: prevState.currentStep - 1,
     }));
   }
 
-  function handleNextStep() {
+  function handleNextStep(): void {
+    if (Object.keys(formState.step3.addOns).length <= 0) return;
+
     setFormState((prevState) => ({
       ...prevState,
       currentStep: prevState.currentStep + 1,
+    }));
+  }
+
+  function handleChanAddOns(value?: { [key: number]: boolean }): void {
+    if (!value) return;
+    setFormState((prevState) => ({
+      ...prevState,
+      step3: { ...prevState.step3, addOns: value },
     }));
   }
 
@@ -41,7 +68,16 @@ export const Steps3 = () => {
         subtitle="Add-ons help enhance your gaming experience."
       />
       <Box sx={boxStyles}>
-        <Box sx={{ ...boxStyles, pt: 4 }}>Step 3</Box>
+        <AddOnSelector
+          options={addOnsList}
+          value={formState.step3.addOns}
+          onChange={handleChanAddOns}
+        />
+        <Box sx={{ mt: 2, justifyContent: 'flex-end', display: 'flex' }}>
+          {Object.keys(formState.step3.addOns).length <= 0 && (
+            <ErrorTypography>Please select at least one add on</ErrorTypography>
+          )}
+        </Box>
       </Box>
       <Box sx={footerStyles}>
         <MUIButton
@@ -64,3 +100,9 @@ export const Steps3 = () => {
 };
 
 export default Steps3;
+
+const boxStyles = {
+  display: 'flex',
+  flexGrow: 1,
+  flexDirection: 'column',
+};
