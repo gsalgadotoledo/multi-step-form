@@ -75,7 +75,7 @@ export const Steps2 = () => {
         subtitle="You have the option of monthly or yearly billing."
       />
       <Box sx={boxStyles}>
-        <Box sx={{ ...boxStyles, pt: 4 }}>
+        <Box sx={containerBoxStyles}>
           <Box sx={contentStyles}>
             {planList.map(({ title, subtitle, image }, index) => (
               <Plan
@@ -149,6 +149,16 @@ const contentStyles: SxProps<Theme> = [
     [down('sm')]: {
       display: 'flex',
       flexDirection: 'column',
+    },
+  }),
+];
+
+const containerBoxStyles: SxProps<Theme> = [
+  ({ breakpoints: { down } }) => ({
+    ...boxStyles,
+    pt: 4,
+    [down('sm')]: {
+      pt: 3,
     },
   }),
 ];

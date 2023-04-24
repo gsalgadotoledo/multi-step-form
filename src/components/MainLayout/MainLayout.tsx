@@ -52,7 +52,7 @@ const contentBoxStyles: SxProps<Theme> = [
   },
   ({ breakpoints: { down } }) => ({
     [down('sm')]: {
-      padding: '32px 16px',
+      padding: '14px 5px 0px',
     },
   }),
 ];

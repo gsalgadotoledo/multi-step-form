@@ -21,7 +21,7 @@ const errorLabelStyles: SxProps<Theme> = [
   ({ palette: { error } }) => ({
     display: 'block',
     mb: 1,
-    fontWeight: 700,
+    fontWeight: 500,
     justifyContent: 'space-between',
     color: error.main,
   }),
