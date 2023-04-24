@@ -7,6 +7,7 @@ import {
   Theme,
   Typography,
 } from '@mui/material';
+import { ErrorTypography } from '../ErrorTypography/ErrorTypography';
 
 export interface TextFieldProps extends OutlinedInputProps {
   label?: string;
@@ -34,11 +35,7 @@ export const TextField = forwardRef(
           <Typography sx={{ mb: 1 }} variant="h6" component="label">
             {label}
           </Typography>
-          {errorMessage && (
-            <Typography sx={errorLabelStyles} variant="h6" component="span">
-              {errorMessage}
-            </Typography>
-          )}
+          {errorMessage && <ErrorTypography>{errorMessage}</ErrorTypography>}
         </Box>
         <MUIOutlineInput
           ref={ref}
@@ -70,15 +67,5 @@ const inputStyles = (error?: string): SxProps<Theme> => [
   ({ palette: { secondary, info, error: errorStyle } }) => ({
     '&:hover, &:active': { border: `1px solid ${secondary.main}` },
     border: `1px solid ${error ? errorStyle.main : info.dark} `,
-  }),
-];
-
-const errorLabelStyles: SxProps<Theme> = [
-  ({ palette: { error } }) => ({
-    display: 'block',
-    mb: 1,
-    fontWeight: 700,
-    justifyContent: 'space-between',
-    color: error.main,
   }),
 ];

@@ -49,6 +49,7 @@ export const Steps4 = () => {
           sx={{
             textTransform: 'none',
             opacity: formState.currentStep > 0 ? 1 : 0,
+            color: 'info.main',
           }}
           variant="text"
         >
