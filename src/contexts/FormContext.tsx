@@ -12,7 +12,9 @@ export interface FormState {
     billing: boolean; // false, true, Monthly and Yearly
   };
   step3: {
-    addOns: number[]; // 0, 1, 2
+    addOns: {
+      [key: number]: boolean;
+    }; // 0, 1, 2
   };
 }
 
@@ -32,7 +34,7 @@ const initialState: FormState = {
     billing: false, // false, true, Monthly and Yearly
   },
   step3: {
-    addOns: [], // 0, 1, 2
+    addOns: {}, // 0, 1, 2
   },
 };
 
